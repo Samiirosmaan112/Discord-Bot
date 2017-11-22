@@ -25,7 +25,7 @@ bot.on('ready', () => { // When the bot is ready
 })
 
 bot.on('ready', () => {
-  bot.createMessage('361524475621277696', { // uptime channel
+  bot.createMessage('382806811528527872', { // uptime channel
     embed: {
       timestamp: new Date(),
       color: 2067276, // Dark green
