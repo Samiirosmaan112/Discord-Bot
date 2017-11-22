@@ -1,2 +1,32 @@
 const Eris = require('eris')
 const config = require('./config.json')
+const { exec } = require('child_process')
+const { inspect } = require('util')
+const request = require('request').defaults({ encoding: null })
+
+// CommandClient
+var bot = new Eris.CommandClient(config.token, {}, {
+  description: 'Experimental bot not working very well',
+  owner: 'N❂✿B#8412',
+  prefix: ['N', '@mention '],
+  defaultHelpCommand: false,
+  autoReconnect: true,
+  ignoreBots: true,
+  ignoreSelf: true
+})
+
+// Startup stuff
+bot.on('ready', () => { // When the bot is ready
+  console.log('Ready!') // Log "Ready!"
+})
+
+bot.on('ready', () => { // When the bot is ready
+  bot.editStatus(null, { name: 'bullied by ŇØØβ | Nhelp', type: 0 })
+})
+
+bot.on('ready', () => {
+  bot.createMessage('361524475621277696', { // uptime channel
+    embed: {
+      timestamp: new Date(),
+      color: 2067276, // Dark green
+      description: '**Online!**'
